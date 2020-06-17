@@ -1,0 +1,14 @@
+<h3>Tenant's information</h3>
+
+<label>Name: </label>
+<h4> <%= @tenant.name %></h4>
+
+<label>Apartment address: </label>
+<h4> <%= @tenant.apartment.address if @tenant.apartment%></h4>
+
+<a href="/tenants/<%= @tenant.id%>/edit">Edit tenant</a>
+
+<form action="/tenants/<%= @tenant.id%>" method="post">
+<input type="hidden" name="_method" value="delete">
+<input type="submit" value="delete tenant">
+</form>

@@ -1,0 +1,8 @@
+<h1>Tenant app</h1>
+
+<% @tenants.each {|tenant| %>
+   <a href = "/tenants/<%= tenant.id%>"> <%=tenant.name%>
+   <br>
+<%}%>
+
+<a class="button" href="/apartments">All Appartments</a>

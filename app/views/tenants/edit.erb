@@ -1,1 +1,17 @@
+<h1>Edit Tenant Profile </h1> 
+<form action= "/tenants/<%= @tenant.id%>" method = 'post'>
+    <input type = "hidden" name = "_method" value = "patch">
+    <label> Tenant Name:
+        <input type = "text" name = "name" value = "<%= @tenant.name%>">
+    </label>
+    <select name="tenant[apt_id]">
+        <option disabled selected> -- Select an Apartment -- </option>
+        <% @apartments.each do |apt| %>
+            <option value=<%= apt.id %> > 
+                <%= apt.address %> 
+            </option>
+        <% end %>
+    </select>
 
+    <input type = "submit" value = "Submit Changes">
+</form>
